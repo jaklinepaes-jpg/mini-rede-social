@@ -1,0 +1,196 @@
+:root {
+    --bg-color: #0d0d12;
+    --card-bg: #1a1a24;
+    --neon-cyan: #00f2ff;
+    --neon-purple: #bc13fe;
+    --text-color: #e0e0e0;
+    --glass-effect: rgba(255, 255, 255, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    background: rgba(26, 26, 36, 0.95);
+    padding: 1rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--neon-purple);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 20px;
+    transition: 0.3s;
+}
+
+.navbar a:hover, .navbar a.active {
+    color: var(--neon-cyan);
+}
+
+/* Layout Principal */
+.container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+/* Sidebar Perfil */
+.profile-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    height: fit-content;
+    border: 1px solid var(--glass-effect);
+}
+
+.banner {
+    height: 80px;
+    background: linear-gradient(45deg, var(--neon-purple), var(--neon-cyan));
+}
+
+.profile-info {
+    padding: 1rem;
+    text-align: center;
+    margin-top: -40px;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    background: #333;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    border: 3px solid var(--neon-cyan);
+    box-shadow: 0 0 15px var(--neon-cyan);
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+/* Feed e Posts */
+.feed {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.post {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 1.5rem;
+    border-left: 4px solid var(--neon-purple);
+    transition: transform 0.2s;
+}
+
+.post:hover {
+    transform: translateY(-5px);
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.post-header img {
+    border-radius: 50%;
+    border: 1px solid var(--neon-cyan);
+}
+
+.post-header span {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.post-image {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin-top: 1rem;
+    border: 1px solid var(--glass-effect);
+}
+
+/* Botões */
+.post-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    background: var(--glass-effect);
+    border: 1px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: var(--neon-cyan);
+    color: #000;
+    box-shadow: 0 0 15px var(--neon-cyan);
+}
+
+.btn-comment {
+    border-color: var(--neon-purple);
+    color: var(--neon-purple);
+}
+
+.btn-comment:hover {
+    background: var(--neon-purple);
+    color: #fff;
+    box-shadow: 0 0 15px var(--neon-purple);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
